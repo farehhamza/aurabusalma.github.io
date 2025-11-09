@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura by Salma - متجر</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:Poppins,sans-serif; }
+  body { background:#fff0f8; color:#333; padding:20px; }
+
+  header { text-align:center; margin-bottom:25px; }
+  header h1 { color:#ff4081; font-size:2em; }
+
+  nav { text-align:center; margin-bottom:25px; }
+  nav a { margin:0 12px; text-decoration:none; font-weight:bold; color:#ff4081; transition:0.3s; }
+  nav a:hover, nav a.active { color:#d5008f; text-decoration:underline; }
+
+  section { max-width:1200px; margin:0 auto 30px; padding:20px; background:#fff; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+  h2 { text-align:center; color:#ff4081; margin-bottom:20px; }
+
+  .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; }
+  .product { background:linear-gradient(145deg,#fff0f7,#ffe4f2); padding:18px; border-radius:15px; text-align:center; box-shadow:0 6px 15px rgba(255,64,129,0.2); transition:0.3s; }
+  .product:hover { transform:translateY(-7px) scale(1.03); box-shadow:0 12px 25px rgba(255,64,129,0.25); }
+  .product img { width:100%; height:200px; object-fit:cover; border-radius:12px; transition:0.4s; }
+  .product:hover img { transform:scale(1.1) rotate(1deg); }
+
+  h3 { margin:10px 0; color:#d5008f; }
+  p.price { font-size:1.2em; color:#ff4081; font-weight:bold; }
+
+  .filters { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:25px; }
+  .filters input[type=text], .filters select { padding:10px; border-radius:8px; border:1px solid #ddd; font-size:1em; }
+
+  footer { text-align:center; margin-top:40px; color:#333; font-size:0.9em; }
+
+  @media(max-width:600px){
+    .products { grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+    header h1 { font-size:1.5em;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>✨ Aura by Salma | أورا بواسطة سلمى ✨</h1>
+</header>
+
+<nav>
+  <a href="#home" class="active">Home | الرئيسية</a>
+  <a href="#products">Products | المنتجات</a>
+  <a href="#about">About | حول</a>
+</nav>
+
+<section id="home">
+  <h2>Welcome to Aura by Salma 🌸 | مرحبًا بكم في أورا بواسطة سلمى 🌸</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Discover our elegant necklaces, bracelets, and earrings.<br>
+    Shine every day with <strong>Aura by Salma</strong> ✨<br><br>
+    اكتشفوا قلاداتنا وأساورنا وأقراطنا الأنيقة.<br>
+    تألقوا كل يوم مع <strong>أورا بواسطة سلمى</strong> ✨
+  </p>
+</section>
+
+<section id="products">
+  <h2>Our Products 💎 | منتجاتنا 💎</h2>
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search product | ابحث عن المنتج">
+    <select id="type">
+      <option value="all">All | الكل</option>
+      <option value="necklace">Necklaces | قلادات</option>
+      <option value="bracelet">Bracelets | أساور</option>
+      <option value="earring">Earrings | أقراط</option>
+    </select>
+  </div>
+  <div class="products" id="productList">
+    <div class="product" data-type="necklace">
+      <img src="image,necklace1.jpg.jpg" alt="Gold Necklace">
+      <h3>Gold Necklace | قلادة ذهبية</h3>
+      <p class="price">120 MAD</p>
+    </div>
+    <div class="product" data-type="bracelet">
+      <img src="imagebracelet1.jpg.jpg" alt="Rose Bracelet">
+      <h3>Rose Bracelet | سوار وردي</h3>
+      <p class="price">90 MAD</p>
+    </div>
+    <div class="product" data-type="earring">
+      <img src="image,earring1.jpg.jpg" alt="Diamond Earrings">
+      <h3>Diamond Earrings | أقراط ماسية</h3>
+      <p class="price">150 MAD</p>
+    </div>
+    <div class="product" data-type="necklace">
+      <img src="image,necklace2.jpg.jpg" alt="Silver Necklace">
+      <h3>Silver Necklace | قلادة فضية</h3>
+      <p class="price">130 MAD</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Aura by Salma | حول أورا بواسطة سلمى</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Aura by Salma is a Moroccan brand specializing in elegant and affordable accessories for women.<br>
+    Our mission is to bring beauty and confidence to every girl through our handmade jewelry pieces.<br><br>
+    أورا بواسطة سلمى هي علامة مغربية متخصصة في الإكسسوارات الأنيقة والميسورة للنساء.<br>
+    هدفنا هو جلب الجمال والثقة لكل فتاة من خلال قطع مجوهراتنا المصنوعة يدويًا.
+  </p>
+</section>
+
+<footer>
+  © 2025 Aura by Salma | أورا بواسطة سلمى | All Rights Reserved
+</footer>
+
+<script>
+const searchInput = document.getElementById('search');
+const typeSelect = document.getElementById('type');
+const products = document.querySelectorAll('.product');
+
+function filterProducts() {
+  const search = searchInput.value.toLowerCase();
+  const type = typeSelect.value;
+
+  products.forEach(product => {
+    const name = product.querySelector('h3').textContent.toLowerCase();
+    const productType = product.getAttribute('data-type');
+
+    if ((type === 'all' || type === productType) && name.includes(search)) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+}
+
+searchInput.addEventListener('input', filterProducts);
+typeSelect.addEventListener('change', filterProducts);
+</script>
+
+</body>
+</html>
